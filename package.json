@@ -14,8 +14,13 @@
     "gulp-plugin"
   ],
   "author": "mattstyles @personalurban",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mattstyles/gulp-hoganify.git"
+  },
+  "homepage": "https://github.com/mattstyles/gulp-hoganify",
   "license": "WTFPL",
-  "devDependencies": {
+  "dependencies": {
     "glob": "^4.3.5",
     "gulp-util": "^3.0.3",
     "hogan.js": "^3.0.2",
