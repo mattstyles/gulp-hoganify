@@ -12,8 +12,13 @@ var fs          = require( 'fs' ),
 module.exports = function( opts ) {
 
     defaults( opts, {
+        // The data to compile with
         data: {},
+
+        // The location to look for template partials, relative to the gulpfile
         tmplPath: './src/tmpl',
+
+        // The template extension to look for
         tmplExtension: '.hjs'
     });
 
@@ -62,7 +67,7 @@ module.exports = function( opts ) {
 
                         // Reduce to a key-value object filename-contents then resolve
                         resolve( files.reduce( function( acc, item, index ) {
-                            acc[ path.basename( item, build.tmplExtension ) ] = res[ index ];
+                            acc[ path.basename( item, opts.tmplExtension ) ] = res[ index ];
                             return acc;
                         }, [] ) );
                     })
@@ -82,7 +87,7 @@ module.exports = function( opts ) {
     return through.obj( function( file, enc, cb ) {
 
         // Grab partials from source and compile
-        getPartials( path.join( __dirname, '../', opts.tmplPath ) )
+        getPartials( opts.tmplPath )
             .then( function( partials ) {
 
                 var tmpl = hogan.compile( file.contents.toString() );
