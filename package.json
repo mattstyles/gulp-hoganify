@@ -1,0 +1,25 @@
+{
+  "name": "gulp-hoganify",
+  "version": "0.1.0",
+  "description": "Turn templates into html with partials using hogan",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "hogan",
+    "template",
+    "html",
+    "gulp",
+    "gulp-plugin"
+  ],
+  "author": "mattstyles @personalurban",
+  "license": "WTFPL",
+  "devDependencies": {
+    "glob": "^4.3.5",
+    "gulp-util": "^3.0.3",
+    "hogan.js": "^3.0.2",
+    "lodash.defaults": "^3.0.0",
+    "through2": "^0.6.3"
+  }
+}
